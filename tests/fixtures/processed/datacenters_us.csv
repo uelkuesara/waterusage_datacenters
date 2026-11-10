@@ -1,0 +1,5 @@
+osm_id,name,operator,lat,lon,state,city
+node/1,Synthetic DC 1,Test Op,39.04,-77.49,VA,
+node/2,Synthetic DC 2,Test Op,39.02,-77.45,VA,
+node/3,Synthetic DC 3,,33.45,-112.07,AZ,
+node/4,,Other Op,32.78,-96.80,TX,

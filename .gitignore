@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store
+# raw downloads are large; processed CSVs are committed so the deployed app works
+data/raw/

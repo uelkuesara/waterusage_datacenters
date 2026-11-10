@@ -1,0 +1,65 @@
+# Model assumptions for the water estimator.
+#
+# Every number here is an *assumption* with a source note. They are deliberately
+# kept in one editable file so the methodology stays transparent and anyone can
+# challenge or update a value without touching code.
+#
+# Before publishing results, re-check each value against its source.
+
+cooling_types:
+  evaporative:
+    label: "Evaporative (cooling towers)"
+    site_wue_l_per_kwh: 1.8
+    range: [1.0, 2.5]
+    note: >-
+      Water-cooled chillers with cooling towers evaporate water to reject heat.
+      1.8 L/kWh is the US on-site average used by LBNL (Shehabi et al., 2016).
+  adiabatic:
+    label: "Adiabatic / hybrid"
+    site_wue_l_per_kwh: 0.5
+    range: [0.2, 1.0]
+    note: >-
+      Dry coolers with evaporative assist only on hot days. Illustrative mid-range value.
+  air_cooled:
+    label: "Air-cooled chillers / dry coolers"
+    site_wue_l_per_kwh: 0.1
+    range: [0.0, 0.2]
+    note: >-
+      Close to zero on-site water, but typically higher electricity use (higher PUE),
+      which shifts water use upstream to power plants.
+  liquid_closed_loop:
+    label: "Direct liquid cooling (closed loop)"
+    site_wue_l_per_kwh: 0.05
+    range: [0.0, 0.2]
+    note: >-
+      Coolant circulates in a sealed loop; residual water use for heat rejection.
+      Illustrative value.
+
+defaults:
+  pue_by_cooling:
+    evaporative: 1.3
+    adiabatic: 1.35
+    air_cooled: 1.5
+    liquid_closed_loop: 1.2
+  utilization: 0.7
+  grid_water_intensity_l_per_kwh: 7.6
+  grid_water_intensity_note: >-
+    Average water consumed per kWh of US electricity generation (thermoelectric
+    cooling + hydro evaporation), as used by LBNL (Shehabi et al., 2016).
+    Varies strongly by grid mix: near zero for wind/solar, much higher for
+    hydro-heavy or thermoelectric-heavy grids.
+
+equivalents:
+  household_liters_per_year: 414000
+  household_note: >-
+    About 300 US gallons (~1,135 L) per day for an average American family,
+    per EPA WaterSense.
+  olympic_pool_liters: 2500000
+
+water_stress_labels:
+  # Aqueduct 4.0 baseline water stress score (0-5) -> category
+  - [0, 1, "Low (<10%)"]
+  - [1, 2, "Low - Medium (10-20%)"]
+  - [2, 3, "Medium - High (20-40%)"]
+  - [3, 4, "High (40-80%)"]
+  - [4, 5.01, "Extremely High (>80%)"]

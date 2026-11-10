@@ -1,0 +1,6 @@
+gid_0,gid_1,name_0,name_1,indicator_name,weight,score,score_ranked,label
+USA,USA.3_1,United States,Arizona,bws,Tot,4.6,1,Extremely High (>80%)
+USA,USA.3_1,United States,Arizona,bws,Dom,4.1,2,Extremely High (>80%)
+USA,USA.47_1,United States,Virginia,bws,Tot,1.2,30,Low - Medium (10-20%)
+USA,USA.47_1,United States,Virginia,drr,Tot,2.0,20,Medium
+DEU,DEU.1_1,Germany,Bayern,bws,Tot,1.5,10,Low - Medium (10-20%)
