@@ -4,7 +4,7 @@
 stress and estimates the water footprint of a planned facility, including the upstream
 water at power plants that most discussions leave out.
 
-**Live demo:** _add your Streamlit link here_ · Built with Python, Streamlit, Plotly and public data.
+**Live demo:** [waterusagedatacenters.streamlit.app](https://waterusagedatacenters-mvghfzkbrxbjowlnlvbngb.streamlit.app/insights)
 
 ![Screenshot of the water risk map](docs/screenshot-map.png)
 
@@ -29,13 +29,13 @@ footprint between the site and the grid.
 
 ## What it does
 
-| Page | What you get |
-|---|---|
-| **Water risk map** | Every mapped US data center on top of WRI Aqueduct water stress per state, for today and for 2030 / 2050 / 2080 climate scenarios. |
-| **Water estimator** | Enter IT capacity, utilization, cooling technology, PUE, grid water intensity and location. Get annual direct + indirect water, a household equivalent, and a scarcity-weighted figure for the chosen state. |
-| **Cooling comparison** | The same site under four cooling technologies. Shows the key trade-off: dry cooling saves water on site but uses more power, so on a water-intensive grid its *total* footprint can be higher. |
-| **Insights** | States ranked by "water-stress exposure" (facilities × stress score) and a scatter of data center clusters vs. water stress. |
-| **Methodology** | Every formula, assumption and source, rendered from one config file. |
+| Page                   | What you get                                                                                                                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Water risk map**     | Every mapped US data center on top of WRI Aqueduct water stress per state, for today and for 2030 / 2050 / 2080 climate scenarios.                                                                           |
+| **Water estimator**    | Enter IT capacity, utilization, cooling technology, PUE, grid water intensity and location. Get annual direct + indirect water, a household equivalent, and a scarcity-weighted figure for the chosen state. |
+| **Cooling comparison** | The same site under four cooling technologies. Shows the key trade-off: dry cooling saves water on site but uses more power, so on a water-intensive grid its _total_ footprint can be higher.               |
+| **Insights**           | States ranked by "water-stress exposure" (facilities × stress score) and a scatter of data center clusters vs. water stress.                                                                                 |
+| **Methodology**        | Every formula, assumption and source, rendered from one config file.                                                                                                                                         |
 
 ## How it works
 
@@ -73,12 +73,12 @@ the model can be challenged and updated without touching code.
 
 ## Data sources
 
-| Dataset | Publisher | License |
-|---|---|---|
-| Data center locations (`telecom=data_center`, `building=data_center`) | © OpenStreetMap contributors | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) |
-| [Aqueduct 4.0 Country & Provincial Rankings](https://www.wri.org/data/aqueduct-40-country-rankings) | World Resources Institute | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| [US Data Center Energy Usage Report](https://eta-publications.lbl.gov/sites/default/files/2024-12/us_data_center_energy_usage_report_lbnl-2001637.pdf) (2016, 2024) | Lawrence Berkeley National Laboratory | Public report |
-| WaterSense household water use | US EPA | Public |
+| Dataset                                                                                                                                                             | Publisher                             | License                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------- |
+| Data center locations (`telecom=data_center`, `building=data_center`)                                                                                               | © OpenStreetMap contributors          | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) |
+| [Aqueduct 4.0 Country & Provincial Rankings](https://www.wri.org/data/aqueduct-40-country-rankings)                                                                 | World Resources Institute             | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  |
+| [US Data Center Energy Usage Report](https://eta-publications.lbl.gov/sites/default/files/2024-12/us_data_center_energy_usage_report_lbnl-2001637.pdf) (2016, 2024) | Lawrence Berkeley National Laboratory | Public report                                              |
+| WaterSense household water use                                                                                                                                      | US EPA                                | Public                                                     |
 
 Aqueduct citation: Kuzma, S., et al. 2023. "Aqueduct 4.0: Updated decision-relevant global
 water risk indicators." Technical Note. Washington, DC: World Resources Institute.
