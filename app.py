@@ -24,4 +24,11 @@ pages = [
     st.Page("views/methodology.py", title="Methodology", icon=":material/menu_book:"),
 ]
 
+from thirsty import theme, ui
+
+_dcs = ui.datacenters()
+theme.apply(
+    n_datacenters=len(_dcs) if _dcs is not None else None,
+    n_states=int(_dcs["state"].nunique()) if _dcs is not None else None,
+)
 st.navigation(pages).run()

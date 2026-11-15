@@ -1,6 +1,11 @@
 [theme]
-primaryColor = "#1f77b4"
-font = "sans serif"
+base = "dark"
+primaryColor = "#4fe3c1"
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#0a1617"
+textColor = "#e8fffb"
+font = "Montserrat:https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+headingFont = "Montserrat"
 
 [server]
 headless = true

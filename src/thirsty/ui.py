@@ -2,16 +2,31 @@
 
 from __future__ import annotations
 
+import plotly.graph_objects as go
+import plotly.io as pio
 import streamlit as st
 
 from . import data
 
-STRESS_COLORSCALE = [
-    [0.0, "#ffffb2"], [0.2, "#fed976"], [0.4, "#feb24c"],
-    [0.6, "#fd8d3c"], [0.8, "#f03b20"], [1.0, "#bd0026"],
-]
-DIRECT_COLOR = "#1f77b4"
-INDIRECT_COLOR = "#9ecae1"
+# Calm water (deep teal) -> stressed (amber) -> critical (red).
+STRESS_COLORS = ["#0c2a2b", "#14605a", "#2fb9a0", "#e9c46a", "#f2843a", "#ff3d5a"]
+STRESS_COLORSCALE = [[i / 5, c] for i, c in enumerate(STRESS_COLORS)]
+DIRECT_COLOR = "#4fe3c1"
+INDIRECT_COLOR = "#1d6f66"
+
+# Plotly look shared by every chart: transparent, mono ticks, faint teal grid.
+pio.templates["thirsty"] = go.layout.Template(layout=dict(
+    font=dict(family="Montserrat, sans-serif", color="#cfeee8", size=13),
+    paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+    colorway=["#4fe3c1", "#1d6f66", "#e9c46a", "#ff3d5a", "#3ab8ff"],
+    xaxis=dict(gridcolor="rgba(79,227,193,.10)", zerolinecolor="rgba(79,227,193,.25)",
+               tickfont=dict(family="Share Tech Mono, monospace", color="#8fb5ad", size=11)),
+    yaxis=dict(gridcolor="rgba(79,227,193,.10)", zerolinecolor="rgba(79,227,193,.25)",
+               tickfont=dict(family="Share Tech Mono, monospace", color="#8fb5ad", size=11)),
+    hoverlabel=dict(bgcolor="#061214", bordercolor="#4fe3c1",
+                    font=dict(family="Share Tech Mono, monospace", color="#e8fffb")),
+))
+pio.templates.default = "plotly_dark+thirsty"
 
 
 @st.cache_data(show_spinner=False)

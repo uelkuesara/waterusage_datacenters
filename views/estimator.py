@@ -90,7 +90,7 @@ fig.add_bar(name="Indirect (power plants)", x=comp["Cooling"], y=comp["Indirect"
 fig.update_layout(barmode="stack", yaxis_title="Billion litres per year", height=380,
                   margin=dict(l=0, r=0, t=10, b=0), legend=dict(orientation="h", y=1.1),
                   paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width="stretch", theme=None)
 
 st.markdown(
     "Air-cooled designs use almost no water on site, but their higher energy use moves "

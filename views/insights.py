@@ -33,9 +33,8 @@ with c1:
                  color="bws_score", color_continuous_scale=ui.STRESS_COLORSCALE, range_color=[0, 5],
                  labels={"exposure": "Data centers × water stress", "state_name": "", "bws_score": "Stress"},
                  hover_data={"datacenters": True, "bws_label": True})
-    fig.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), paper_bgcolor="rgba(0,0,0,0)",
-                      plot_bgcolor="rgba(0,0,0,0)")
-    st.plotly_chart(fig, use_container_width=True)
+    fig.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), coloraxis_showscale=False)
+    st.plotly_chart(fig, width="stretch", theme=None)
 with c2:
     st.markdown("#### Data centers vs. water stress")
     fig = px.scatter(mapped, x="bws_score", y="datacenters", text="state", size="datacenters",
@@ -45,7 +44,7 @@ with c2:
     fig.update_traces(textposition="top center", marker=dict(line=dict(width=0)))
     fig.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), coloraxis_showscale=False,
                       paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch", theme=None)
     st.caption("Top-right quadrant: large clusters in water-stressed states.")
 
 st.markdown("#### All states")
